@@ -596,6 +596,7 @@ def main(cfg: DictConfig) -> Trainer:
 
 
 if __name__ == '__main__':
+    time.sleep(60 * 60 * 36)
     yaml_path, args_list = sys.argv[1], sys.argv[2:]
 
     # Disable resolving environment variables through omegaconf.
