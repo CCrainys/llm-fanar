@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 jobs:
   pytest-gpu:
-    uses: mosaicml/ci-testing/.github/workflows/pytest-gpu.yaml@aff7fa38e602a04e5eb96e17c884dd2735f995e6
+    uses: mosaicml/ci-testing/.github/workflows/pytest-gpu.yaml@f7ed8f19ed751c9c68033d25de8334f16ea5955d
     strategy:
       matrix:
         include:
