@@ -14,10 +14,10 @@ from composer import Trainer
 from composer.core.callback import Callback
 from composer.loggers import MosaicMLLogger
 from composer.loggers.mosaicml_logger import (MOSAICML_ACCESS_TOKEN_ENV_VAR,
-                                              MOSAICML_PLATFORM_ENV_VAR)
+                                              MOSAICML_PLATFORM_ENV_VAR,)
 from composer.metrics.nlp import InContextLearningMetric
 from composer.profiler import (JSONTraceHandler, Profiler, TraceHandler,
-                               cyclic_schedule)
+                               cyclic_schedule,)
 from composer.utils import dist, get_device, reproducibility
 from omegaconf import DictConfig, ListConfig
 from omegaconf import OmegaConf as om
@@ -34,10 +34,10 @@ from llmfoundry.utils.builders import (add_metrics_to_eval_loaders,
                                        build_algorithm, build_callback,
                                        build_evaluators, build_logger,
                                        build_optimizer, build_scheduler,
-                                       build_tokenizer)
+                                       build_tokenizer,)
 from llmfoundry.utils.config_utils import (log_config, pop_config,
                                            process_init_device,
-                                           update_batch_size_info)
+                                           update_batch_size_info,)
 
 log = logging.getLogger(__name__)
 
@@ -505,7 +505,7 @@ def main(cfg: DictConfig) -> Trainer:
             tokenizer,
             device_train_batch_size,
         )
-    except ValueError as e:
+    except Exception as e:
         if mosaicml_logger is not None:
             mosaicml_logger.log_exception(e)
         raise e
